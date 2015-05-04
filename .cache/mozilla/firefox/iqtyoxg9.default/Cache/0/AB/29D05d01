@@ -1,0 +1,449 @@
+<html>
+<head>
+<title>rdesktop - 下载 - 自由软件库 - ChinaUnix.net </title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<meta name="keywords" content="软件,Linux下载，Unix下载,BSD,Solaris,操作系统，驱动下载,软件下载,开源下载,down,download,系统相关,管理工具,通讯交流,桌面相关,文件管理,操作系统,安全工具,硬件相关,网络互连,电子邮件,FTP服务器,HTTP服务器,网络浏览,聊天工具,上传下载,镜像备份,X窗口系统,远程登陆,网络安全,新闻组,开发工具,开发语言,库文件,编译工具,版本控制,数据库开发,优化调试,IDE环境,应用程序,数据库,教育培训,商业金融,办公套件,文本处理,科学工程,信息管理,论坛程序,Wiki程序,Blog相关,建站管理,项目管理,多媒体工具,音频工具,图形图像,视频工具,游戏娱乐,益智类,棋牌类,动作类,RPG类,策略类,模拟器,相关工具">
+<meta name="description" content="Download.ChinaUnix.net软件下载频道是ChinaUnix.net重要栏目之一。提供全面、实用、快速、安全的免费软件下载">
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="/css/index.css" type="text/css">
+<link rel="stylesheet" href="/css/base.css" type="text/css">
+<style type="text/css">
+<!--
+.10 {	font-family: "宋体";
+	font-size: 10pt;
+	line-height: 14pt;
+	text-decoration: none;
+}
+-->
+</style>
+</head>
+<body>
+<table border="0" cellspacing="0" cellpadding="0" style="border-collapse: collapse" width="100%">
+<tr><td colspan="3">
+		<table border="0" cellspacing="0" cellpadding="0" style="border-collapse: collapse" width="100%">
+		<tr><td bgcolor="#3F6DCB" height="25" style="color:#FFFFFF" align="right">
+		<a href='http://www.chinaunix.net' class="list2">首页</a> | 
+		<a href='http://linux.chinaunix.net' class="list2">Linux</a> | 
+		<a href='http://bbs.chinaunix.net' class="list2">论坛</a> | 
+		<a href='http://www.chinaunix.net/jh' class="list2">精华</a> | 
+		<a href='http://blog.chinaunix.net/' class="list2">博客</a> | 
+		<a href='http://fanqiang.chinaunix.net/' class="list2">资料</a> | 
+		<a href='http://man.chinaunix.net/' class="list2">手册</a> | 
+		<a href='http://wiki.chinaunix.net/' class="list2">知识库</a> | 
+		<a href='http://download.chinaunix.net/' class="list2">下载</a> | 
+		<a href='http://job.chinaunix.net/' class="list2">人才</a> | 
+		<a href='http://www.chinaunix.net/topics/salon/' class="list2">沙龙</a> | 
+		<a href='http://search.chinaunix.net/' class="list2">搜索</a> |
+		<a href='http://bbs.chinaunix.net/logging.php?action=login' class="list2">登录</a> |
+		<a href='http://bbs.chinaunix.net/register.php' class="list2">注册</a> 
+		&nbsp;
+		</td></tr>
+		</table>
+</td></tr>
+<tr><td colspan="3" height="2"></td></tr>
+<tr height="80">
+	<td width="190"><a href="http://download.chinaunix.net"><img src="/images/logo.gif" border=0 alt=""></a></td>
+	<td width="810"><table width=100% align=left border=0 cellspacing=0 cellpadding=0>
+<tr><td><a target="_blank" href="http://bbs.chinaunix.net/thread-3771646-1-1.html">
+<img src="http://cupic.img168.net/bbsfile/forum/201209/27/144423zhjhofolxyogyjox.jpg" ></a></div></td></tr>
+</table></td>
+</tr>
+<tr><td colspan="2" height="1">
+	<table border="0" cellspacing="0" cellpadding="0" style="border-collapse: collapse" width="1000">
+	<tr><td></td></tr>
+	</table>
+</td></tr>
+</table>
+<table border="0" cellspacing="0" cellpadding="0" style="border-collapse: collapse" width="100%">
+<tr><td colspan="3" height="1">
+	<table border="0" cellspacing="0" cellpadding="0" style="border-collapse: collapse" width="1000">
+	<tr><td></td></tr>
+	</table>
+</td></tr>
+<tr>
+	<td width="190" valign="top">
+	<table width=100% align=center>
+<tr><td>
+
+</td></tr>
+</table>
+	<!-- 左边 -->
+		<table border="0" cellspacing="0" cellpadding="0" style="border-collapse: collapse" width="185" align="center">
+		<tr>
+		<td width="9"><img src="/images/left_2_top_left.gif" border=0 alt=""></td>
+		<td background="/images/left_2_top_bg.gif" align="center" style="color:#FFFFFF" width="168">
+		<b>下载分类</b></td>
+		<td width="8"><img src="/images/left_2_top_right.gif" border=0 alt=""></td>
+		</tr>
+		
+		<tr>
+		<td colspan="3" style="border: 1px solid #D59165; padding: 1">
+			<table border='1' cellspacing='0' cellpadding='0' style='border-collapse: collapse' bordercolor='#FFFFFF' width='98%' align='center'><tr height='25' bgcolor='#FDFCF1'><td align='center' width='30'><img src='/images/dot_1.gif'></td><td><a href='/disc/' title='操作系统'>操作系统</a></td></tr><tr height='25' bgcolor='#F3F1DE'><td align='center' width='30'><img src='/images/dot_1.gif'></td><td><a href='/system/' title='系统相关'>系统相关</a></td></tr><tr height='25' bgcolor='#FDFCF1'><td align='center' width='30'><img src='/images/dot_1.gif'></td><td><a href='/network/' title='网络互连'>网络互连</a></td></tr><tr height='25' bgcolor='#F3F1DE'><td align='center' width='30'><img src='/images/dot_1.gif'></td><td><a href='/develop/' title='开发工具'>开发工具</a></td></tr><tr height='25' bgcolor='#FDFCF1'><td align='center' width='30'><img src='/images/dot_1.gif'></td><td><a href='/application/' title='应用程序'>应用程序</a></td></tr><tr height='25' bgcolor='#F3F1DE'><td align='center' width='30'><img src='/images/dot_1.gif'></td><td><a href='/multimedia/' title='多媒体工具'>多媒体工具</a></td></tr><tr height='25' bgcolor='#FDFCF1'><td align='center' width='30'><img src='/images/dot_1.gif'></td><td><a href='/game/' title='游戏娱乐'>游戏娱乐</a></td></tr><tr height='25' bgcolor='#F3F1DE'><td align='center' width='30'><img src='/images/dot_1.gif'></td><td><a href='/doc/' title='资料视频'>资料视频</a></td></tr></table>
+		</td>
+		</tr>
+		</table>
+
+		<table border="0" cellspacing="0" cellpadding="0" style="border-collapse: collapse" width="185" align="center">
+		<tr><td colspan="3" height="5"></td></tr>
+
+		<tr>
+		<td width="10"><img src="/images/left_1_top_left.gif" border=0 alt=""></td>
+		<td background="/images/left_1_top_bg.gif" align="center" style="color:#FFFFFF" width="165">
+		<b>本类周下载TOP10</b></td>
+		<td width="10"><img src="/images/left_1_top_right.gif" border=0 alt=""></td>
+		</tr>
+		
+		<tr>
+		<td colspan="3" style="border: 1px solid #3F6DCB; padding: 1">
+			<iframe name="" frameborder=0 src="/js/ifweektop10.php?CatalogID=19" width="180" height="250" scrolling="no"></iframe>
+		</td>
+		</tr>
+		<tr><td colspan="3" height="5"></td></tr>
+		</table>
+		<table border="0" cellspacing="0" cellpadding="0" style="border-collapse: collapse" width="185" align="center">
+		<tr>
+		<td width="9"><img src="/images/left_2_top_left.gif" border=0 alt=""></td>
+		<td background="/images/left_2_top_bg.gif" align="center" style="color:#FFFFFF" width="168">
+		<b>本类总下载TOP10</b></td>
+		<td width="8"><img src="/images/left_2_top_right.gif" border=0 alt=""></td>
+		</tr>
+		
+		<tr>
+		<td colspan="3" style="border: 1px solid #D59165; padding: 1">
+			<iframe name="" frameborder=0 src="/js/ifalltop10.php?CatalogID=19" width="180" height="250" scrolling="no"></iframe>
+		</td>
+		</tr>
+		</table>
+		
+		
+	</td><td width="650" valign="top">
+	<!-- 中间 -->
+		<table width="100%" border="0" cellpadding="0" cellspacing="0">
+		<tr>
+		<td width="33"><img src="/images/img_fenlei_l.gif" border=0 alt=""></td>
+		<td  background="/images/bg_fenlei.gif" style="background-image: url(/images/bg_fenlei.gif);" width="100%">您的位置：<a href='http://download.chinaunix.net'>自由软件库</a>-><a href='/network/'>网络互连</a>-><a href='/network/remote/'>远程登陆</a>->rdesktop</td>
+		<td width="33"><img src="/images/img_fenlei_r.gif" border=0 alt=""></td>
+		</tr>
+		</table>
+		<!-- 搜索 -->
+
+	 <table border="0" cellspacing="0" cellpadding="0" style="border-collapse: collapse" bordercolor="#EDFAFE" width="100%"><form method=get action="/search">
+		<tr height=40><td bgcolor="#EDFAFE" style="border: 1px solid #78ACF8; padding: 1">
+		
+		<input type=hidden name=key value="">
+		<table border="0" cellspacing="0" cellpadding="0" style="border-collapse: collapse" bordercolor="#111111" width="100%">
+		<tr><td>
+		<img src="/images/img_search.gif" border=0 alt="">
+		</td><td>
+		<input type="text" name="q" size="40" style="border: 1px solid #808080; padding: 1" value="">
+		<select name="frmid"><option value="0">全部版块</option>
+			<option value=52 >操作系统</option><option value=53>&nbsp;&nbsp;Linux</option><option value=54>&nbsp;&nbsp;BSD</option><option value=55>&nbsp;&nbsp;Solaris</option><option value=2 >系统相关</option><option value=3>&nbsp;&nbsp;管理工具</option><option value=4>&nbsp;&nbsp;通讯交流</option><option value=5>&nbsp;&nbsp;桌面相关</option><option value=6>&nbsp;&nbsp;文件管理</option><option value=7>&nbsp;&nbsp;操作系统</option><option value=8>&nbsp;&nbsp;安全工具</option><option value=9>&nbsp;&nbsp;硬件相关</option><option value=10 >网络互连</option><option value=11>&nbsp;&nbsp;电子邮件</option><option value=12>&nbsp;&nbsp;FTP服务器</option><option value=13>&nbsp;&nbsp;HTTP服务器</option><option value=61>&nbsp;&nbsp;网络浏览</option><option value=15>&nbsp;&nbsp;聊天工具</option><option value=16>&nbsp;&nbsp;上传下载</option><option value=17>&nbsp;&nbsp;镜像备份</option><option value=18>&nbsp;&nbsp;X窗口系统</option><option value=19 selected>&nbsp;&nbsp;远程登陆</option><option value=48>&nbsp;&nbsp;其他服务</option><option value=49>&nbsp;&nbsp;网络安全</option><option value=14>&nbsp;&nbsp;新闻组</option><option value=20 >开发工具</option><option value=21>&nbsp;&nbsp;开发语言</option><option value=22>&nbsp;&nbsp;库文件</option><option value=23>&nbsp;&nbsp;编译工具</option><option value=24>&nbsp;&nbsp;版本控制</option><option value=25>&nbsp;&nbsp;数据库开发</option><option value=26>&nbsp;&nbsp;优化调试</option><option value=27>&nbsp;&nbsp;IDE环境</option><option value=28>&nbsp;&nbsp;其他工具</option><option value=29 >应用程序</option><option value=30>&nbsp;&nbsp;数据库</option><option value=31>&nbsp;&nbsp;教育培训</option><option value=32>&nbsp;&nbsp;商业金融</option><option value=33>&nbsp;&nbsp;办公套件</option><option value=34>&nbsp;&nbsp;文本处理</option><option value=35>&nbsp;&nbsp;科学工程</option><option value=36>&nbsp;&nbsp;信息管理</option><option value=50>&nbsp;&nbsp;其他软件</option><option value=56>&nbsp;&nbsp;论坛程序</option><option value=57>&nbsp;&nbsp;Wiki程序</option><option value=58>&nbsp;&nbsp;Blog相关</option><option value=59>&nbsp;&nbsp;建站管理</option><option value=60>&nbsp;&nbsp;项目管理</option><option value=37 >多媒体工具</option><option value=38>&nbsp;&nbsp;音频工具</option><option value=39>&nbsp;&nbsp;图形图像</option><option value=40>&nbsp;&nbsp;视频工具</option><option value=41 >游戏娱乐</option><option value=42>&nbsp;&nbsp;益智类</option><option value=43>&nbsp;&nbsp;棋牌类</option><option value=44>&nbsp;&nbsp;动作类</option><option value=45>&nbsp;&nbsp;RPG类</option><option value=46>&nbsp;&nbsp;策略类</option><option value=47>&nbsp;&nbsp;模拟器</option><option value=51>&nbsp;&nbsp;相关工具</option><option value=62 >资料视频</option><option value=63>&nbsp;&nbsp;网络技术</option><option value=64>&nbsp;&nbsp;服务器存储</option><option value=65>&nbsp;&nbsp;Linux安全</option><option value=66>&nbsp;&nbsp;《开源时代》</option>
+		</select>
+		<input type=submit title="搜索" value="搜 索" style="color: #0A61AC; border: 1px solid #003C74; padding: 1; background-color: #F2F2ED;height:14pt;cursor:hand;">
+		</td></tr>
+		</table><p style='line-height: 150%; margin: 4'>
+		 首字母搜索 <a href='/search/?q=&&key=A'>A</a> <a href='/search/?q=&&key=B'>B</a> <a href='/search/?q=&&key=C'>C</a> <a href='/search/?q=&&key=D'>D</a> <a href='/search/?q=&&key=E'>E</a> <a href='/search/?q=&&key=F'>F</a> <a href='/search/?q=&&key=G'>G</a> <a href='/search/?q=&&key=H'>H</a> <a href='/search/?q=&&key=I'>I</a> <a href='/search/?q=&&key=J'>J</a> <a href='/search/?q=&&key=K'>K</a> <a href='/search/?q=&&key=L'>L</a> <a href='/search/?q=&&key=M'>M</a> <a href='/search/?q=&&key=N'>N</a> <a href='/search/?q=&&key=O'>O</a> <a href='/search/?q=&&key=P'>P</a> <a href='/search/?q=&&key=Q'>Q</a> <a href='/search/?q=&&key=R'>R</a> <a href='/search/?q=&&key=S'>S</a> <a href='/search/?q=&&key=T'>T</a> <a href='/search/?q=&&key=U'>U</a> <a href='/search/?q=&&key=V'>V</a> <a href='/search/?q=&&key=W'>W</a> <a href='/search/?q=&&key=X'>X</a> <a href='/search/?q=&&key=Y'>Y</a> <a href='/search/?q=&&key=Z'>Z</a>  <a href='/search/?q=&&key='>无</a>
+			</td></tr></form>
+		</table>
+
+<br />
+
+
+	<table width="100%"  border="0" cellpadding="3" cellspacing="1" bgcolor="#CCCCCC">
+	<tr bgcolor="#FFFFFF">
+	<td width="80" valign="top" bgcolor="#FFFFFF"><strong> 软件名称： </strong></td>
+	<td valign="top" bgcolor="#FFFFFF">rdesktop</td>
+	</tr>
+
+	<tr bgcolor="#FFFFFF">
+	<td valign="top" bgcolor="#FFFFFF"> <strong>授权方式：</strong></td>
+	<td valign="top" bgcolor="#FFFFFF"> GPL </td>
+	</tr>
+	<tr bgcolor="#FFFFFF">
+	<td valign="top" bgcolor="#FFFFFF"> <strong>操作系统：</strong></td>
+	<td valign="top" bgcolor="#FFFFFF"> Linux,FreeBSD,UNIX,i386,x86_64 </td>
+	</tr>
+	<tr bgcolor="#FFFFFF">
+	<td valign="top" bgcolor="#FFFFFF"> <strong>软件大小：</strong></td>
+	<td valign="top" bgcolor="#FFFFFF"> 297239b </td>
+	</tr>
+	<tr bgcolor="#FFFFFF">
+	<td valign="top" bgcolor="#FFFFFF"> <strong>最新更新：</strong></td>
+	<td valign="top" bgcolor="#FFFFFF"> 2011-12-25 23:41:04 </td>
+	</tr>
+	<tr bgcolor="#FFFFFF">
+	<td valign="top" bgcolor="#FFFFFF"> <strong>软件简介：</strong></td>
+	<td valign="top" bgcolor="#FFFFFF"> <P>rdesktop是一个开放源码的Window&nbsp;&nbsp; NT中断服务器的客户端，它实现了远程桌面协议（RDP）。不像Citrix&nbsp;&nbsp; ICA，它对于服务器并无扩展要求。 </P>
+<P><IMG height=94 alt="" src="http://www.rdesktop.org/rdesktop.gif" width=94></P>
+<P>rdesktop是linux下支持Windows远程桌面连接的客户端程序，在linux系统下可通过它远程访问Windows桌面，支持多种版本。rdesktop是sourceforge下支持GPL协议的一个开源项目，采用RDP（Remote Desktop Protocol,远程桌面协议），几乎可以连接windows的所有版本，诸如NT 4 Terminal Server, 2000, XP, 2003, 2003 R2, Vista, 2008, 7, and 2008 R2等。目前，rdesktop可运行于所有的基于X window平台的Unix系统中,当前稳定版本是1.7.0.<BR>具体使用方法要先打开终端，然后输入以下命令：<BR>　　rdesktop -u yournape -p password -g 1024*720 192.168.0.2<BR>rdesktop为使用远程桌面连接的命令；<BR>　　-u 用户名，yourname处为目标客户端的用户名；<BR>　　-p 客户端用户的密码；<BR>　　-g 分辨率， 中间用“x”连接，可省略，省略后默认为全屏显示；<BR>　　192.168.0.1 目标客户端的IP地址</P>
+<P><BR>rdesktop is an open source client for Windows Remote Desktop Services, capable of natively speaking Remote Desktop Protocol (RDP) in order to present the user s Windows desktop. rdesktop is known to work with Windows versions such as NT 4 Terminal Server, 2000, XP, 2003, 2003 R2, Vista, 2008, 7, and 2008 R2.</P>
+<P>rdesktop currently runs on most UNIX based platforms with the X Window System, and other ports should be fairly straightforward.</P>
+<P>rdesktop is released under the GNU Public Licence (GPL), version 3. Please send feedback, bug reports and patches to the appropriate mailing list. Patches can also be submitted to the SF patch tracker. </P> </td>
+	</tr>
+	<tr bgcolor="#FFFFFF">
+	<td valign="top" bgcolor="#FFFFFF"> <strong>相关论坛：</strong></td>
+	<td valign="top" bgcolor="#FFFFFF"> <a href="http://bbs.chinaunix.net/forumdisplay.php?fid=97" target="_blank">下载频道交流区</a> <a href="http://bbs.chinaunix.net/forumdisplay.php?fid=0" target="_blank">讨论区</a> </td>
+	</tr>
+	<tr bgcolor="#FFFFFF">
+	<td valign="top" bgcolor="#FFFFFF"><font color="red"><img src="/img/down.gif" border="0" align="absmiddle">立即下载</font></td>
+	<td valign="middle" bgcolor="#FFFFFF"> <p style="line-height: 150%; margin: 5px"><a href='/download.php?id=18012&ResourceID=8874' target='_blank'>rdesktop-1.4.1.tar.gz
+</a><br /><a href='/download.php?id=24610&ResourceID=8874' target='_blank'>rdesktop-1.5.0-rc1.tar.gz</a><br /><a href='/download.php?id=26876&ResourceID=8874' target='_blank'>rdesktop-1.5.0.tar.gz</a><br /><a href='/download.php?id=26877&ResourceID=8874' target='_blank'>rdesktop-1.6.0.tar.gz</a><br /><a href='/download.php?id=35515&ResourceID=8874' target='_blank'>rdesktop-1.7.0.tar.gz</a><br /><a href='/download.php?id=35516&ResourceID=8874' target='_blank'>rdesktop-1.6.0-rdpusb.patch.bz2</a><br /></td>
+	</tr>
+	</table>
+
+	
+
+	<table width="100%"  border="0" cellspacing="0" cellpadding="0">
+	<tr align="center" valign="top">
+	<td height="2"></td>
+	</tr>
+	</table>
+	<table width="100%"  border="0" cellpadding="3" cellspacing="1" bgcolor="#CCCCCC">
+	<tr  valign="top">
+	<td bgcolor="#EDF0F5">
+		<table border="0" cellspacing="0" cellpadding="0" style="border-collapse: collapse" width="90%" align="center">
+		<tr><td>
+			<script language="JavaScript" src="http://comment.chinaunix.net/comment.php?op=viewRecentComment&artTitle=rdesktop&artUrl=http://download.chinaunix.net/download/0009000/8874.shtml&artId=8874&tplId=1&catId=13"></script>
+		</td></tr>
+		</table>
+		
+	</td>
+	</tr>
+	</table>
+	<table width="100%"  border="0" cellspacing="0" cellpadding="0">
+	<tr align="center" valign="top">
+	<td height="2"></td>
+	</tr>
+	</table>
+
+	<table width="100%"  border="0" cellspacing="0" cellpadding="0">
+	<tr align="center" valign="top">
+	<td></td>
+	</tr>
+	</table>
+	
+	</td><td width="160" valign="top" bgcolor="#EFF6FC">
+	<!-- 右边广告 -->
+	
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+      <tr>
+
+        <td height="27" background="http://linux.chinaunix.net/images/bg245.jpg" class="F13"><table width="100%"><tr><td class="F13">&nbsp;Linux最新资讯</td><td align="right"><a href="http://linux.chinaunix.net/news" target="_blank">更多>></a>&nbsp;</td></tr></table></td>
+
+      </tr>
+
+      <tr>
+
+        <td valign="top" bgcolor="#FFFFFF" class="BLKtext" ><table width="97%" border="0" align="center" cellpadding="0" cellspacing="0">
+
+          <tr>
+
+            <td height="5"></td>
+
+          </tr>
+
+          <tr>
+
+            <td>·<a href='http://linux.chinaunix.net/news/linux/2012/05/10/3741046.shtml' title='Evernote推进入华节奏：将按照中国规则来玩' target='_blank'>Evernote推进入华节奏：</a><br />
+·<a href='http://linux.chinaunix.net/news/linux/2012/05/10/3741047.shtml' title='桌面操作系统 4 月最新排名' target='_blank'>桌面操作系统 4 月最新</a><br />
+·<a href='http://linux.chinaunix.net/news/linux/2012/05/10/3741048.shtml' title='Linux基金会：Linux成Big Data救星' target='_blank'>Linux基金会：Linux成B</a><br />
+·<a href='http://linux.chinaunix.net/news/linux/2012/05/10/3741049.shtml' title='中国联通升级HSPA+网络：手机可享21M速率' target='_blank'>中国联通升级HSPA+网络</a><br />
+·<a href='http://linux.chinaunix.net/news/linux/2012/05/10/3741050.shtml' title='联通“随意打”论战：绝地反击还是破釜沉舟' target='_blank'>联通“随意打”论战：绝</a><br />
+·<a href='http://linux.chinaunix.net/news/linux/2012/05/10/3741051.shtml' title='阿里巴巴集团30亿美元贷款获超额认购' target='_blank'>阿里巴巴集团30亿美元贷</a><br />
+·<a href='http://linux.chinaunix.net/news/linux/2012/05/10/3741041.shtml' title='要以扫黄打非的精神进行“扫黄打菲”' target='_blank'>要以扫黄打非的精神进行</a><br />
+·<a href='http://linux.chinaunix.net/news/linux/2012/04/18/3725171.shtml' title='内核源码，ARM架构上的一个问题，求解：' target='_blank'>内核源码，ARM架构上的</a><br />
+·<a href='http://linux.chinaunix.net/news/linux/2010/05/17/1163853.shtml' title='Ubuntu 10.04版本企业云功能集使用体验' target='_blank'>Ubuntu 10.04版本企业云</a><br />
+·<a href='http://linux.chinaunix.net/news/linux/2010/05/17/1163858.shtml' title='企业级Linux三国鼎立 与红帽逐鹿谁主沉浮？' target='_blank'>企业级Linux三国鼎立 与</a><br />
+·<a href='http://linux.chinaunix.net/news/linux/2008/12/29/1055245.shtml' title='开源图像软件GIMP开发者谈新功能和未来改进' target='_blank'>开源图像软件GIMP开发者</a><br />
+·<a href='http://linux.chinaunix.net/news/linux/2008/12/29/1055244.shtml' title='不给Source就捣蛋？谈GPL的适用范围' target='_blank'>不给Source就捣蛋？谈G</a><br />
+</td>
+
+          </tr>
+
+          <tr>
+
+            <td height="5"></td>
+
+          </tr>
+
+        </table></td>
+
+      </tr>
+
+      <tr>
+
+        <td height="10" bgcolor="#FFFFFF"></td>
+
+      </tr>
+
+      <tr></table><table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+      <tr>
+
+        <td height="27" background="http://linux.chinaunix.net/images/bg245.jpg" class="F13"><table width="100%"><tr><td class="F13">&nbsp;IT最新资讯</td><td align="right"><a href="http://linux.chinaunix.net" target="_blank">更多>></a>&nbsp;</td></tr></table></td>
+
+      </tr>
+
+      <tr>
+
+        <td valign="top" bgcolor="#FFFFFF" class="BLKtext" ><table width="97%" border="0" align="center" cellpadding="0" cellspacing="0">
+
+          <tr>
+
+            <td height="5"></td>
+
+          </tr>
+
+          <tr>
+
+            <td>·<a href='http://linux.chinaunix.net/news/opensource/2012/05/10/3741044.shtml' title='大连外企500强急招java/net开发/测试/QA/数据库/iphone开发人才！！' target='_blank'>大连外企500强急招java</a><br />
+·<a href='http://linux.chinaunix.net/news/opensource/2012/05/10/3741036.shtml' title='（内部推荐）EMC-Principal SW Quality Engineer-Datadomain-北京' target='_blank'>（内部推荐）EMC-Princ</a><br />
+·<a href='http://linux.chinaunix.net/news/opensource/2012/05/10/3741030.shtml' title='(内部推荐)EMC-greenplum-Software Engineer-北京' target='_blank'>(内部推荐)EMC-greenpl</a><br />
+·<a href='http://linux.chinaunix.net/news/opensource/2012/05/10/3741009.shtml' title='页游公司招聘：运维开发工程师，Linux C/C++ 服务器开发工程师，Flash AS3 开发工程师' target='_blank'>页游公司招聘：运维开发</a><br />
+·<a href='http://linux.chinaunix.net/news/opensource/2012/05/10/3740991.shtml' title='赶集移动部门招聘前端开发工程师' target='_blank'>赶集移动部门招聘前端开</a><br />
+·<a href='http://linux.chinaunix.net/news/opensource/2012/05/10/3740970.shtml' title='【北京】知名软件公司招聘ABAP开发工程师【猎头】' target='_blank'>【北京】知名软件公司招</a><br />
+·<a href='http://linux.chinaunix.net/news/opensource/2012/05/10/3740944.shtml' title='有莫有C++ and C# and SQL都proficient的人呀' target='_blank'>有莫有C++ and C# and </a><br />
+·<a href='http://linux.chinaunix.net/news/opensource/2012/05/09/3739543.shtml' title='下班路上捡到一张工资表，心情非常低落' target='_blank'>下班路上捡到一张工资表</a><br />
+·<a href='http://linux.chinaunix.net/news/opensource/2012/05/09/3739444.shtml' title='猎头代招：北京大型上市互联网公司招聘QA  leader or manager 英语前端主管' target='_blank'>猎头代招：北京大型上市</a><br />
+·<a href='http://linux.chinaunix.net/news/opensource/2012/05/09/3739436.shtml' title='DSI猎头代招：华为-IP部门:linux专家/内存数据库/协议识别/多核CPU芯片架构顾问40W +' target='_blank'>DSI猎头代招：华为-IP部</a><br />
+·<a href='http://linux.chinaunix.net/news/opensource/2012/05/09/3739424.shtml' title='上海诚聘JAVA工程师' target='_blank'>上海诚聘JAVA工程师</a><br />
+·<a href='http://linux.chinaunix.net/news/opensource/2010/05/17/1163898.shtml' title='微软和苹果10大失败产品 双方各占5席' target='_blank'>微软和苹果10大失败产品</a><br />
+·<a href='http://linux.chinaunix.net/news/opensource/2009/10/27/1141339.shtml' title='Darl McBride离开领导岗位，SCO还能残喘到何时' target='_blank'>Darl McBride离开领导岗</a><br />
+·<a href='http://linux.chinaunix.net/news/opensource/2009/02/11/1061356.shtml' title='提升Qt的应用诺基亚即将增加授权选择[09年1月刊]' target='_blank'>提升Qt的应用诺基亚即将</a><br />
+</td>
+
+          </tr>
+
+          <tr>
+
+            <td height="5"></td>
+
+          </tr>
+
+        </table></td>
+
+      </tr>
+
+      <tr>
+
+        <td height="10" bgcolor="#FFFFFF"></td>
+
+      </tr>
+
+      <tr></table><table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+      <tr>
+
+        <td height="27" background="http://linux.chinaunix.net/images/bg245.jpg" class="F13"><table width="100%"><tr><td class="F13">&nbsp;综合：</td><td align="right"><a href="http://linux.chinaunix.net" target="_blank">更多>></a>&nbsp;</td></tr></table></td>
+
+      </tr>
+
+      <tr>
+
+        <td valign="top" bgcolor="#FFFFFF" class="BLKtext" ><table width="97%" border="0" align="center" cellpadding="0" cellspacing="0">
+
+          <tr>
+
+            <td height="5"></td>
+
+          </tr>
+
+          <tr>
+
+            <td>·<a href='http://linux.chinaunix.net/techdoc/develop/2012/03/19/3688201.shtml' title='PHP中strtotime函数使用方法' target='_blank'>PHP中strtotime函数使用</a><br />
+·<a href='http://linux.chinaunix.net/techdoc/develop/2012/03/19/3688199.shtml' title='五个常见 PHP数据库问题' target='_blank'>五个常见 PHP数据库问题</a><br />
+·<a href='http://linux.chinaunix.net/techdoc/develop/2012/03/19/3688198.shtml' title='初探PHP单元测试利器：PHPUnit' target='_blank'>初探PHP单元测试利器：</a><br />
+·<a href='http://linux.chinaunix.net/techdoc/develop/2012/03/19/3688196.shtml' title='PHP开发人员容易忽略的几点精华' target='_blank'>PHP开发人员容易忽略的</a><br />
+·<a href='http://linux.chinaunix.net/techdoc/develop/2012/03/19/3688194.shtml' title='逃离伪PHP程序员应该做的事' target='_blank'>逃离伪PHP程序员应该做</a><br />
+·<a href='http://linux.chinaunix.net/techdoc/develop/2012/03/19/3688192.shtml' title='大型Web应用运行时 PHP负载均衡指南' target='_blank'>大型Web应用运行时 PHP</a><br />
+·<a href='http://linux.chinaunix.net/techdoc/develop/2012/03/19/3688191.shtml' title='PHP企业级应用缓存技术详解' target='_blank'>PHP企业级应用缓存技术</a><br />
+·<a href='http://linux.chinaunix.net/techdoc/develop/2012/03/19/3688189.shtml' title='PHP应用提速面面观' target='_blank'>PHP应用提速面面观</a><br />
+·<a href='http://linux.chinaunix.net/techdoc/develop/2012/03/19/3688188.shtml' title='用书签查询网站pr值' target='_blank'>用书签查询网站pr值</a><br />
+·<a href='http://linux.chinaunix.net/techdoc/develop/2012/03/19/3688187.shtml' title='PHP句法规则详解' target='_blank'>PHP句法规则详解</a><br />
+·<a href='http://linux.chinaunix.net/techdoc/develop/2012/03/19/3688184.shtml' title='阴历-农历-转换类' target='_blank'>阴历-农历-转换类</a><br />
+·<a href='http://linux.chinaunix.net/techdoc/develop/2012/03/19/3688183.shtml' title='PHP定时执行任务的实现' target='_blank'>PHP定时执行任务的实现</a><br />
+·<a href='http://linux.chinaunix.net/techdoc/develop/2012/03/19/3688181.shtml' title='几种有用的变型 PHP中循环语句的用法' target='_blank'>几种有用的变型 PHP中循</a><br />
+·<a href='http://linux.chinaunix.net/techdoc/develop/2012/03/19/3688180.shtml' title='PHP如何修改Linux或Unix口令' target='_blank'>PHP如何修改Linux或Uni</a><br />
+·<a href='http://linux.chinaunix.net/techdoc/develop/2012/03/19/3688178.shtml' title='PHP中全面阻止SQL注入式攻击' target='_blank'>PHP中全面阻止SQL注入式</a><br />
+·<a href='http://linux.chinaunix.net/techdoc/develop/2012/03/19/3688177.shtml' title='分享几个非常有用的PHP代码片段' target='_blank'>分享几个非常有用的PHP</a><br />
+·<a href='http://linux.chinaunix.net/techdoc/develop/2012/03/19/3688176.shtml' title='PHP面向对象法则' target='_blank'>PHP面向对象法则</a><br />
+·<a href='http://linux.chinaunix.net/techdoc/develop/2012/03/19/3688175.shtml' title='优化PHP程序的方法' target='_blank'>优化PHP程序的方法</a><br />
+·<a href='http://linux.chinaunix.net/techdoc/develop/2012/03/16/3686893.shtml' title='orcale queue' target='_blank'>orcale queue</a><br />
+·<a href='http://linux.chinaunix.net/techdoc/develop/2012/03/16/3686868.shtml' title='谁可以推荐几本经典的操作系统的书（英文版）' target='_blank'>谁可以推荐几本经典的操</a><br />
+</td>
+
+          </tr>
+
+          <tr>
+
+            <td height="5"></td>
+
+          </tr>
+
+        </table></td>
+
+      </tr>
+
+      <tr>
+
+        <td height="10" bgcolor="#FFFFFF"></td>
+
+      </tr>
+
+      <tr></table>
+	</td>
+</td>
+
+</tr>
+</table>
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td>
+
+</td></tr>
+<tr><td>
+
+</td></tr>
+</table>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td height="2" bgcolor="#377BDC"></td>
+  </tr>
+  <tr>
+    <td height="40" align="center"><a href=http://www.chinaunix.net/about/index.shtml target=_blank>关于我们</a>  |  <a href=http://www.chinaunix.net/about/connect.html target=_blank>联系方式</a>  |  <a href=http://www.chinaunix.net/about/service.html target=_blank>广告合作</a>  |  <a href=http://www.chinaunix.net/about/hr.html target=_blank>诚聘英才</a> | <a href=http://www.chinaunix.net/about/channel.html target=_blank>网站地图</a>  |  <a href=http://www.chinaunix.net/about//about/friend.html target=_blank>友情链接</a> | <a href=http://bbs.chinaunix.net/register.php target=_blank>免费注册</a></td>
+  </tr>
+  <tr>
+    <td height="2" bgcolor="#377BDC"></td>
+  </tr>  
+  <tr>
+    <td align="center"><br><p>Copyright &copy; 2001-2006 ChinaUnix.net   All Rights Reserved<br>
+<p>感谢所有关心和支持过ChinaUnix的朋友们
+<p><a href=http://www.miibeian.gov.cn/ target=_blank>京ICP证041476号</a>
+	</td>
+  </tr>
+</table>
+</CENTER>
+<!-- 统计 begin -->
+<script language="javascript" src="http://stat.it168.com/pv.js"></script>
+<script>
+function sendPV(){
+    var pvTrack = new PvTrack();
+    pvTrack.type = 10; // 频道类别ID
+    pvTrack.channel = 257; // 频道ID
+   
+    pvTrack.pageType = 0;
+    pvTrack.track();
+}
+window.setTimeout("sendPV()", 0);
+</script>
+<div style='display:none'>
+<script type="text/javascript"> 
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F0ee5e8cdc4d43389b3d1bfd76e83216b' type='text/javascript'%3E%3C/script%3E"));
+</script>
+</div>
+<!-- 统计 end -->
+<!-- 访问统计 -->
+
+</BODY></HTML>

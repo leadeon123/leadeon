@@ -1,0 +1,649 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+	<xsl:include href="/wcn/F568B45880F283B7D6A0C2A8430B85/xlibs/private.xsl"/>
+	<xsl:include href="/wcn/F568B45880F283B7D6A0C2A8430B85/xlibs/mlist2.xsl"/>
+	<xsl:include href="list.xsl"/>
+	<xsl:template name="HTML_HEAD">
+	    <link href="/wcn/F568B45880F283B7D6A0C2A8430B85/skin/custom/others/index.css" rel="stylesheet" type="text/css"/>
+		<script type="text/javascript" language="javascript" src="/wcn/F568B45880F283B7D6A0C2A8430B85/libs/mlist2.js"/>
+		<script type="text/javascript" language="javascript" src="/wcn/F568B45880F283B7D6A0C2A8430B85/js/sysinfo/summary.js"/>
+	</xsl:template>
+	<xsl:template match="/ROOT/DYNA">
+		<xsl:param name="str_res"/>
+		<xsl:param name="menu_struct"/>
+		<table cellpadding="5" cellspacing="0" width="100%" height="100%">
+			<tr valign="top">
+				<td width="*">
+					<xsl:apply-templates select="wcn/device-info/dev-resource-table"/>
+					<xsl:if test="wcn/interface/interface-table">
+						<xsl:call-template name="TABTITLE">
+							<xsl:with-param name="tab_name" select="/ROOT/STATIC/InterfaceInfo"/>
+						</xsl:call-template>
+						<xsl:call-template name="MLIST2">
+							<xsl:with-param name="res_header" select="/ROOT/STATIC/Interface"/>
+							<xsl:with-param name="list_body" select="wcn/interface/interface-table"/>
+							<xsl:with-param name="list_name" select="'Interface'"/>
+							<xsl:with-param name="str_res" select="$str_res"/>
+						</xsl:call-template>
+						<div align="left">
+						    <span><xsl:apply-templates select="/ROOT/STATIC/Interface/DESCRIPTION"/></span>
+						</div>
+					</xsl:if>
+					<xsl:apply-templates select="//idi/info-table"/>
+					<xsl:if test="//syslog/logreport-table/row/seq-num !=''">
+					<xsl:call-template name="TABTITLE">
+						<xsl:with-param name="tab_name" select="/ROOT/STATIC/OpereteLog"/>
+					</xsl:call-template>			
+                    <xsl:call-template name="MLIST2">
+                        <xsl:with-param name="res_header" select="/ROOT/STATIC/OperLog"/>
+                        <xsl:with-param name="list_body" select="syslog/syslog/logreport-table1"/>
+                        <xsl:with-param name="list_name" select="'logreport-table'"/>
+                        <xsl:with-param name="str_res" select="$str_res"/>
+                    </xsl:call-template>
+                    <div align="left">
+					    <span><xsl:apply-templates select="/ROOT/STATIC/OperLog/DESCRIPTION"/></span>
+					</div>
+                    </xsl:if>
+					<br/>
+					<div align="center">
+					<form>
+						<span style="font-size :12px">
+							<xsl:value-of select="/ROOT/STATIC/AutoRefresh"/>
+						</span>
+						<select name="ref_time" id="ref_time" onchange="setTimes(this.value);" style="font-size :12px">
+							<xsl:call-template name="list-to-options">
+								<xsl:with-param name="items" select="/ROOT/STATIC/SelectInfo"/>
+							</xsl:call-template>
+						</select>
+						<input class="buttonX" type="button" value="{/ROOT/STATIC/RefreshButton}" onclick="RefreshNow();"/>
+					</form>
+					</div>
+				</td>
+				<td width="211" valign="top" class="body1">
+					<xsl:apply-templates select="wcn/device-info/device-table"/>
+				</td>
+			</tr>
+		</table>
+	</xsl:template>
+	
+	
+<xsl:template match="logreport-table/row" mode="mlist_row_ovl2">
+        <xsl:apply-templates select="date" mode="mlist_cell2"/>
+        <xsl:apply-templates select="level" mode="mlist_cell2"/>
+        <xsl:apply-templates select="des" mode="mlist_cell2"/>
+    </xsl:template>
+    
+    <xsl:template match="level" mode="mlist_cell_ovl2">
+            <xsl:call-template name="num2msg">
+                <xsl:with-param name="level_num" select="."/>
+            </xsl:call-template>
+    </xsl:template>
+    
+    <xsl:template name="num2msg">
+        <xsl:param name="level_num"/>
+        <xsl:value-of select="/ROOT/STATIC/level-str/msg[number($level_num)+1]"/>
+    </xsl:template>   	
+	
+	
+<xsl:template match="device-table">
+    <!--Begin : Added by Michael Ran (R02617) for supporting IRF  -->
+    <xsl:variable name="n_master_enindex">
+    <xsl:for-each select="/ROOT/DYNA/stm/device-info/getinfo-table/row">
+        <xsl:if test="memberid = /ROOT/DYNA/stm/board-info/getboardinfo-table/row/memberid-board">
+            <xsl:value-of select="entindex"/>
+        </xsl:if>
+    </xsl:for-each>
+    </xsl:variable>
+
+    <xsl:variable name="n_showchassis_enindex">
+    <xsl:choose>
+        <xsl:when test="'' = $n_master_enindex">
+            <xsl:value-of select="/ROOT/DYNA/wcn/device-info/device-table/row/unit-id"/>
+        </xsl:when>
+        <xsl:otherwise>
+            <xsl:value-of select="$n_master_enindex"/>
+        </xsl:otherwise>
+    </xsl:choose>
+    </xsl:variable>
+    <!--End : Added by Michael Ran (R02617) for supporting IRF  -->
+	
+		<table width="211" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td height="70" valign="top">
+					<img src="../../skin/custom/others/info.gif" width="211" height="46"/>
+					
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<img src="../../skin/custom/others/bar.gif" width="211" height="2"/>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<table width="211" border="0" cellspacing="0" cellpadding="0">
+						<tr>
+							<td width="35" align="right" valign="top">
+								<img src="../../images/icon_21.gif" width="16" height="16" vspace="8"/>
+							</td>
+							<td width="10" height="40">
+								<p class="white">
+									<br/>
+								</p>
+							</td>
+							<td width="166">
+								<span class="white">
+									<xsl:value-of select="/ROOT/STATIC/EqumentName"/>
+									<br/>
+									<!-- xsl:value-of select="row/device-name"/-->
+									<xsl:value-of select = "//DYNA/wcn/device-info/device-table/row[unit-id=$n_showchassis_enindex]/device-name"/>
+								</span>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<img src="../../skin/custom/others/bar.gif" width="211" height="2"/>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<table width="211" border="0" cellspacing="0" cellpadding="0">
+						<tr>
+							<td width="35" align="right" valign="top">
+								<img src="../../images/icon_22.gif" width="16" height="16" vspace="8"/>
+							</td>
+							<td width="10" height="40">
+								<p class="white">
+									<br/>
+								</p>
+							</td>
+							<td width="166" class="white">
+								<xsl:value-of select="/ROOT/STATIC/ProductInfo"/>
+								<br/>
+								<!-- xsl:value-of select="row/product-desc"/-->
+								<xsl:value-of select = "//DYNA/wcn/device-info/device-table/row[unit-id=$n_showchassis_enindex]/product-desc"/>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<img src="../../skin/custom/others/bar.gif" width="211" height="2"/>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<table width="211" border="0" cellspacing="0" cellpadding="0">
+						<tr>
+							<td width="35" align="right" valign="top">
+								<img src="../../images/icon_23.gif" width="16" height="16" vspace="8"/>
+							</td>
+							<td width="10" height="40">
+								<p class="white">
+									<br/>
+								</p>
+							</td>
+							<td width="166" class="white">
+								<xsl:value-of select="/ROOT/STATIC/EqumentLocation"/>
+								<br/>
+								<xsl:value-of select="../sys-info-table/row/location"/>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<img src="../../skin/custom/others/bar.gif" width="211" height="2"/>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<table width="211" border="0" cellspacing="0" cellpadding="0">
+						<tr>
+							<td width="35" align="right" valign="top">
+								<img src="../../images/icon_24.gif" width="16" height="16" vspace="8"/>
+							</td>
+							<td width="10" height="40">
+								<p class="white">
+									<br/>
+								</p>
+							</td>
+							<td width="166" class="white">
+								<xsl:value-of select="/ROOT/STATIC/ContactInfo"/>
+								<br/>
+								<xsl:value-of select="../sys-info-table/row/contact"/>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<img src="../../skin/custom/others/bar.gif" width="211" height="2"/>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<table width="211" border="0" cellspacing="0" cellpadding="0">
+						<tr>
+							<td width="35" align="right" valign="top">
+								<img src="../../images/icon_25.gif" width="16" height="16" vspace="8"/>
+							</td>
+							<td width="10" height="40">
+								<p class="white">
+									<br/>
+								</p>
+							</td>
+							<td width="166" class="white">
+								<xsl:value-of select="/ROOT/STATIC/SequenctNo"/>
+								<br/>
+								<!-- xsl:value-of select="row/serial-number"/-->
+								<xsl:value-of select = "//DYNA/wcn/device-info/device-table/row[unit-id=$n_showchassis_enindex]/serial-number"/>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<img src="../../skin/custom/others/bar.gif" width="211" height="2"/>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<table width="211" border="0" cellspacing="0" cellpadding="0">
+						<tr>
+							<td width="35" align="right" valign="top">
+								<img src="../../images/icon_27.gif" width="16" height="16" vspace="8"/>
+							</td>
+							<td width="10" height="40">
+								<p class="white">
+									<br/>
+								</p>
+							</td>
+							<td width="166" class="white">
+								<xsl:value-of select="/ROOT/STATIC/SoftVerion"/>
+								<br/>
+								<!--xsl:value-of select="row/software-version"/-->
+								<xsl:value-of select = "//DYNA/wcn/device-info/device-table/row[unit-id=$n_showchassis_enindex]/software-version"/>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<img src="../../skin/custom/others/bar.gif" width="211" height="2"/>
+				</td>
+			</tr>
+			<xsl:if test="//idi/info-table/row/ips-name!=''">
+			<tr>
+				<td>
+					<table width="211" border="0" cellspacing="0" cellpadding="0">
+						<tr>
+							<td width="35" align="right" valign="top">
+								<img src="../../images/icon_27.gif" width="16" height="16" vspace="8"/>
+							</td>
+							<td width="10" height="40">
+								<p class="white">
+									<br/>
+								</p>
+							</td>
+							<td width="166" class="white">
+								<xsl:value-of select = "//idi/info-table/row/ips-name"/>
+								<xsl:value-of select="/ROOT/STATIC/SignatureDes"/>
+								<br/>
+								<xsl:value-of select = "//idi/info-table/row/ips-ver"/>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<img src="../../skin/custom/others/bar.gif" width="211" height="2"/>
+				</td>
+			</tr>
+			</xsl:if>
+			<xsl:if test="//idi/info-table/row/app-name!=''">
+			<tr>
+				<td>
+					<table width="211" border="0" cellspacing="0" cellpadding="0">
+						<tr>
+							<td width="35" align="right" valign="top">
+								<img src="../../images/icon_27.gif" width="16" height="16" vspace="8"/>
+							</td>
+							<td width="10" height="40">
+								<p class="white">
+									<br/>
+								</p>
+							</td>
+							<td width="166" class="white">
+								<xsl:value-of select = "//idi/info-table/row/app-name"/>
+								<xsl:value-of select="/ROOT/STATIC/SignatureDes"/>
+								<br/>
+								<xsl:value-of select = "//idi/info-table/row/app-ver"/>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<img src="../../skin/custom/others/bar.gif" width="211" height="2"/>
+				</td>
+			</tr>
+			</xsl:if>
+			<xsl:if test="//idi/info-table/row/av-name!=''">
+			<tr>
+				<td>
+					<table width="211" border="0" cellspacing="0" cellpadding="0">
+						<tr>
+							<td width="35" align="right" valign="top">
+								<img src="../../images/icon_27.gif" width="16" height="16" vspace="8"/>
+							</td>
+							<td width="10" height="40">
+								<p class="white">
+									<br/>
+								</p>
+							</td>
+							<td width="166" class="white">
+								<xsl:value-of select = "//idi/info-table/row/av-name"/>
+								<xsl:value-of select="/ROOT/STATIC/SignatureDes"/>
+								<br/>
+								<xsl:value-of select = "//idi/info-table/row/av-ver"/>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<img src="../../skin/custom/others/bar.gif" width="211" height="2"/>
+				</td>
+			</tr>
+			</xsl:if>
+			<tr>
+				<td>
+					<table width="211" border="0" cellspacing="0" cellpadding="0">
+						<tr>
+							<td width="35" align="right" valign="top">
+								<img src="../../images/icon_28.gif" width="16" height="16" vspace="8"/>
+							</td>
+							<td width="10" height="40">
+								<p class="white">
+									<br/>
+								</p>
+							</td>
+							<td width="166" class="white">
+								<xsl:value-of select="/ROOT/STATIC/HardwareVerion"/>
+								<br/>
+								<!--xsl:value-of select="row/hardware-version"/-->
+								<xsl:value-of select = "//DYNA/wcn/device-info/device-table/row[unit-id=$n_showchassis_enindex]/hardware-version"/>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<img src="../../skin/custom/others/bar.gif" width="211" height="2"/>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<table width="211" border="0" cellspacing="0" cellpadding="0">
+						<tr>
+							<td width="35" align="right" valign="top">
+								<img src="../../images/icon_29.gif" width="16" height="16" vspace="8"/>
+							</td>
+							<td width="10" height="40">
+								<p class="white">
+									<br/>
+								</p>
+							</td>
+							<td width="166" class="white">
+								<xsl:value-of select="/ROOT/STATIC/BootROMVersion"/>
+								<br/>
+								<pre style="padding:0px;margin:0px;">
+								<!--xsl:value-of select="row/boot-version"/-->
+								<xsl:value-of select = "//DYNA/wcn/device-info/device-table/row[unit-id=$n_showchassis_enindex]/boot-version"/>
+								</pre>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<img src="../../skin/custom/others/bar.gif" width="211" height="2"/>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<table width="211" border="0" cellspacing="0" cellpadding="0">
+						<tr>
+							<td width="35" align="right" valign="top">
+								<img src="../../images/icon_30.gif" width="16" height="16" vspace="8"/>
+							</td>
+							<td width="10" height="40">
+								<p class="white">
+									<br/>
+								</p>
+							</td>
+							<td width="166" class="white">
+								<xsl:value-of select="/ROOT/STATIC/OperateTime"/>
+								<br/>
+								<xsl:value-of select="../sys-info-table/row/up-time"/>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td></td>
+			</tr>
+		</table>
+	</xsl:template>
+	<!--
+    Show the useage of CPU and memory, and show the current session number of the current virtual device
+    -->
+	<xsl:template match="dev-resource-table/row">
+
+			<xsl:call-template name="TABTITLE">
+				<xsl:with-param name="tab_name" select="/ROOT/STATIC/SysResourceState"/>
+			</xsl:call-template>
+		<TABLE width="100%" cellpadding="0" cellspacing="0" class="mlist" id="dev_resource_table">
+
+            <tr class="row135">
+				<td width="30%" class="sub-title">
+					<xsl:value-of select="/ROOT/STATIC/Cpu"/>
+				</td>
+				<xsl:call-template name="h-percent">
+					<xsl:with-param name="percent" select="cpu"/>
+				</xsl:call-template>
+    			<td align="left">
+    	    		<xsl:value-of select="cpu"/>
+        	        <xsl:value-of select="'%'"/>
+    		    </td>				
+			</tr>
+			<xsl:if test="//DYNA/flowengine/flowengine/cpu-table">
+    			<tr class="row135">
+    				<td width="30%" class="sub-title">
+    					<xsl:value-of select="/ROOT/STATIC/flowengine"/>
+    				</td>
+    				<xsl:call-template name="h-percent">
+    					<xsl:with-param name="percent" select="//DYNA/flowengine/flowengine/cpu-table/row/last"/>
+    				</xsl:call-template>
+        			<td align="left">
+        	    		<xsl:value-of select="//DYNA/flowengine/flowengine/cpu-table/row/last"/>
+            	        <xsl:value-of select="'%'"/>
+        		    </td>				
+    			</tr>
+			</xsl:if>
+			<tr class="row135">
+				<td width="30%" class="sub-title">
+					<xsl:value-of select="/ROOT/STATIC/Memory"/>
+				</td>
+				<xsl:call-template name="h-percent">
+					<xsl:with-param name="percent" select="memory"/>
+				</xsl:call-template>
+			<td align="left">
+
+	    		<xsl:value-of select="memory"/>
+    	        <xsl:value-of select="'%'"/>
+
+		    </td>
+			</tr>
+			<xsl:if test="temperature!=65535">
+			<tr id="trTemperature" class="row135">
+				<td width="30%" class="sub-title">
+					<xsl:value-of select="/ROOT/STATIC/Temperature"/>
+				</td>
+				
+				<td width="200" align="right">
+    			<div class="temperature" id="temperaturePic" name="temperaturePic">
+        			<img src="../../skin/custom/others/graph_off.gif" alt="" width="{200-2*number(temperature)}" height="20"/>
+    			</div>
+        		</td>
+        		<td align="left">
+        			<xsl:value-of select="temperature"/>
+        			<xsl:value-of select="'&#176;C'"/>
+        			<input id="temperature" style="display:none" value="{temperature}"/>        			
+        			<input id="temperature_threshold" style="display:none" value="{temperature-threshold}"/>
+        		</td>
+		
+			</tr>
+            </xsl:if>  
+			<xsl:if test="/ROOT/DYNA/session/session/session-statistics-table">
+			<tr id="trVdActiveLink" class="row246">
+				<td width="30%" class="sub-title">
+					<xsl:value-of select="/ROOT/STATIC/VdActiveLink"/>
+				</td>
+				<td colspan="2">
+					<xsl:value-of select="/ROOT/DYNA/session/session/session-statistics-table/row/total-num"/>
+				</td>
+			</tr>
+			<tr id="trTotalActiveLink" class="row135">
+				<td width="30%" class="sub-title">
+					<xsl:value-of select="/ROOT/STATIC/TotalActiveLink"/>
+				</td>
+				<td colspan="2">
+                   <xsl:if test="'' = /ROOT/DYNA/session/session/session-statotal-table/row/total-stanum">
+                       <xsl:value-of select="/ROOT/STATIC/NullValue"/> 
+                   </xsl:if>
+                   <xsl:if test="'' != /ROOT/DYNA/session/session/session-statotal-table/row/total-stanum">
+                       <xsl:value-of select="/ROOT/DYNA/session/session/session-statotal-table/row/total-stanum"/>                                                                            
+                   </xsl:if>
+				</td>
+			</tr>
+			</xsl:if>
+		</TABLE>
+
+	</xsl:template>
+
+    <xsl:template match="interface-table/row" mode="mlist_row_ovl2">
+        <xsl:apply-templates select="ifname" mode="mlist_cell2"/>
+        <xsl:apply-templates select="ip-address" mode="mlist_ipmask"/>
+        <xsl:apply-templates select="ifname" mode="mlist_cell_zone"/>
+        <xsl:apply-templates select="oper-status" mode="mlist_cell2"/>
+    </xsl:template>
+    <xsl:template match="interface-table/row" mode="mlist_check_row">
+        <xsl:choose>
+            <xsl:when test="iftype >= '69' and '74' >= iftype"> <!-- ¹ýÂËÎÞÏß½Ó¿Ú -->
+                <xsl:value-of select="'false'"/>
+            </xsl:when>
+            <xsl:when test="iftype='84' or iftype='85'">
+                <xsl:value-of select="'false'"/>
+            </xsl:when> 
+            <xsl:otherwise>
+                <xsl:value-of select="'true'"/>
+            </xsl:otherwise>
+        </xsl:choose>
+    </xsl:template>
+
+
+	<xsl:template name="h-percent">
+		<xsl:param name="percent"/>
+		<td width="200" align="right">
+			<div class="usage">
+				<img src="../../skin/custom/others/graph_off.gif" alt="" width="{200-2*number($percent)}" height="20"/>
+			</div>
+		</td>
+
+	</xsl:template>
+	<xsl:template match="DESCRIPTION">
+		<xsl:value-of select="@name"/>
+		<a>
+		    <xsl:attribute name="href">
+		        <xsl:value-of select="'javascript:redirectById(&quot;'"/>
+		        <xsl:value-of select="@pageid"/>
+		        <xsl:value-of select="'&quot;)'"/>
+		    </xsl:attribute>
+			<xsl:value-of select="/ROOT/STATIC/More"/>
+		</a>
+	</xsl:template>
+	<xsl:template match="idi/info-table">
+	<xsl:call-template name="TABTITLE">
+	<xsl:with-param name="tab_name" select="/ROOT/STATIC/FilterTbl"/>
+	</xsl:call-template>
+	<table width="100%" cellpadding="0" cellspacing="0" class="mlist">
+				<thead id="mlist_thead">
+					<tr>
+						<td width="40%">
+							<xsl:value-of select="//FilterDsc"/>
+						</td>
+						<td width="30%">
+							<xsl:value-of select="//Deny"/>
+						</td>
+						<td>
+							<xsl:value-of select="//Warning"/>
+						</td>
+					</tr>
+				</thead>
+				<tbody>
+				<tr class="row135">
+					<td width="40%" class="content_item">
+						<a href="javascript:redirectById('I_IPS_LOG')">
+						<xsl:value-of select="//IPS"/></a>
+					</td>
+					<td width="30%" class="content_value">
+						<xsl:value-of select="//iips/ips/log-stat-table/row/block"/>
+					</td>
+					<td class="content_value">
+						<xsl:value-of select="//iips/ips/log-stat-table/row/alert"/>
+					</td>
+				</tr>
+				<tr class="row246">
+					<td width="40%" class="content_item">
+						<a href="javascript:redirectById('I_URL_LOG')">
+						<xsl:value-of select="//URL"/></a>
+					</td>
+					<td width="30%" class="content_value">
+						<xsl:value-of select="//iurl/url/log-stat-table/row/block"/>
+					</td>
+					<td class="content_value">
+						<xsl:value-of select="//iurl/url/log-stat-table/row/alert"/>
+					</td>
+				</tr>
+				<tr class="row135">
+					<td width="40%" class="content_item">
+						<a href="javascript:redirectById('I_AV_LOG')">
+						<xsl:value-of select="//AV"/></a>
+					</td>
+					<td width="30%" class="content_value">
+						<xsl:value-of select="//iav/av/log-stat-table/row/block"/>
+					</td>
+					<td class="content_value">
+						<xsl:value-of select="//iav/av/log-stat-table/row/alert"/>
+					</td>
+				</tr>
+				</tbody>
+			</table>
+	</xsl:template>
+</xsl:stylesheet>

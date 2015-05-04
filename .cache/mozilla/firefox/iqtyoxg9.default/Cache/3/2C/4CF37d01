@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<xsl:stylesheet version="1.0"
+xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+xmlns:exsl="http://exslt.org/common"
+extension-element-prefixes="exsl">
+<xsl:output method="html" media-type="text/html" encoding="GB2312"/>
+<xsl:include href="/wcn/F568B45880F283B7D6A0C2A8430B85/xlibs/util.xsl"/>
+<xsl:include href="/wcn/F568B45880F283B7D6A0C2A8430B85/xsl/frame/oem.xsl"/>
+<xsl:template match="/">
+<xsl:variable name="oem_str_res1" select="document(concat('../../customdir/', /ROOT/STATIC/LANG, '/oem_str_res.xsl'))/xsl:stylesheet/xsl:variable/ROOT/STATIC" />
+<html style="height:100%">
+    <head>
+        <title>
+            <xsl:value-of select="ROOT/STATIC/TITLE"/>
+        </title>
+        <link href="/wcn/F568B45880F283B7D6A0C2A8430B85/skin/custom/frame/index.css" rel="stylesheet" type="text/css"/>
+        <script type="text/javascript" language="javascript" src="/wcn/F568B45880F283B7D6A0C2A8430B85/libs/cos.js"/>
+        <script type="text/javascript" language="javascript" src="/wcn/F568B45880F283B7D6A0C2A8430B85/libs/ver.js"/>
+        <script type="text/javascript" language="javascript" src="/wcn/F568B45880F283B7D6A0C2A8430B85/{/ROOT/STATIC/LANG}/resource.js"/>
+        <script type="text/javascript" language="javascript" src="/wcn/F568B45880F283B7D6A0C2A8430B85/{/ROOT/STATIC/LANG}/errInfo.js"/><!-- For Garibaldi -->
+        <script type="text/javascript" language="javascript" src="/wcn/F568B45880F283B7D6A0C2A8430B85/js/frame/frame.js"/>
+        <script type="text/javascript" language="javascript" src="/wcn/F568B45880F283B7D6A0C2A8430B85/libs/widget.js"/>
+        <script type="text/javascript" language="javascript" src="/wcn/F568B45880F283B7D6A0C2A8430B85/libs/runstate.js"/>
+        <script type="text/javascript" language="javascript" src="/wcn/F568B45880F283B7D6A0C2A8430B85/skin/skin.js"/>
+        <script type="text/javascript" language="javascript" src="/wcn/F568B45880F283B7D6A0C2A8430B85/skin/custom/config.js"/>
+        <script type="text/javascript" language="javascript" src="/wcn/F568B45880F283B7D6A0C2A8430B85/libs/mulplatapi.js"/>
+        <script type="text/javascript" language="javascript" src="/wcn/F568B45880F283B7D6A0C2A8430B85/libs/main.js"/>
+        <script type="text/javascript" language="javascript" src="/wcn/F568B45880F283B7D6A0C2A8430B85/libs/define.js"/>
+        <script type="text/javascript" language="javascript" src="/wcn/F568B45880F283B7D6A0C2A8430B85/libs/util.js"/> 
+        <script type="text/javascript" language="javascript" src="/wcn/F568B45880F283B7D6A0C2A8430B85/libs/eventhandler.js"/>
+        <script type="text/javascript" language="javascript" src="/wcn/F568B45880F283B7D6A0C2A8430B85/libs/imgpreload.js"/>
+        <script type="text/javascript" language="javascript" src="/wcn/F568B45880F283B7D6A0C2A8430B85/libs/form.js"/>
+        <script type="text/javascript" language="javascript" src="/wcn/F568B45880F283B7D6A0C2A8430B85/libs/ajax.js"/>
+        <script type="text/javascript" language="javascript" src="/wcn/F568B45880F283B7D6A0C2A8430B85/libs/srequest.js"/>
+        <script type="text/javascript" language="javascript" src="/wcn/F568B45880F283B7D6A0C2A8430B85/libs/database.js"/>
+        <script type="text/javascript" language="javascript" src="/wcn/F568B45880F283B7D6A0C2A8430B85/libs/tableview.js"/>
+        <script type="text/javascript" language="javascript" src="/wcn/F568B45880F283B7D6A0C2A8430B85/libs/content.js"/>
+        <script type="text/javascript" language="javascript" src="/wcn/F568B45880F283B7D6A0C2A8430B85/libs/hxml.js"/>
+        <script type="text/javascript" language="javascript" src="/wcn/F568B45880F283B7D6A0C2A8430B85/libs/fwindow.js"/>
+        <script type="text/javascript" language="javascript" src="/wcn/F568B45880F283B7D6A0C2A8430B85/driver/{/ROOT/DYNA/Navigator}/main.js"/>
+        <script type="text/javascript" language="javascript" src="/wcn/F568B45880F283B7D6A0C2A8430B85/help//help_index.js"/>
+        <script type="text/javascript" language="javascript">
+        var g_oemAlt = "<xsl:value-of select = "$oem_str_res1/LogoAlt"/>";
+        var sUID = "<xsl:value-of select="/ROOT/STATIC/UID"/>";
+        g_LANG = "<xsl:value-of select="/ROOT/STATIC/LANG"/>";
+        var g_sUsername = "";
+        var g_sPassword = "";
+        var g_sIP = "<xsl:value-of select="//DYNA/SIP"/>";
+        top.level = <xsl:value-of select="/ROOT/PRVL/CURRENT_USER"/>;
+        var g_sWebHelp = "";
+        var g_oNewWin;
+        var g_szHelpPath;
+        var g_szHelpPageID;
+        
+        top.WnmSetUID(sUID);
+        var sCurVirtualName = "<xsl:value-of select="/ROOT/PRVL/CURVIRTUALNAME"/>";
+        var sCurVirtualID = "<xsl:value-of select="/ROOT/PRVL/CURVIRTUALID"/>";
+        var sUserVirtualName = "<xsl:value-of select="/ROOT/DYNA/VIRTUALNAME"/>";
+        var sUserVirtualID = "<xsl:value-of select="/ROOT/DYNA/VIRTUALID"/>"; 
+
+function OnInitialize()
+{
+    top.FrmSubmit = frames[0];
+    WnmSetVirtualDevice(sCurVirtualID,sCurVirtualName);
+    WnmSetUserVirtualDevice(sUserVirtualID, sUserVirtualName);
+    g_sUsername = document.getElementById("user_name").value;
+    g_sPassword = document.getElementById("user_pass").value;
+    top.EventHandler.eventFires(window,"resize");
+    top.EventHandler.eventFires(document,"keydown");
+    var oAjax = new AjaxObject();
+    oAjax.SetCallback(getTimeoutCB);
+	var oRequest = new XmlRequest(XCMP_ACTION_ONLYGET);
+	oRequest.AddModule("wcn")
+						.AddSubModule("web")
+							.AddTable("login-timeout-table")
+								.AddField("login-timeout");
+    oAjax.SendRequest("/wcn/device/get.x?xml="+oRequest.MakeXmlString()); 
+
+    top.doAction(top.content.menu, 'url::/wcn/frame/tree');
+}
+
+function getTimeoutCB(timeout,xmlHttp)
+{
+    if(null != xmlHttp &amp;&amp; xmlHttp.responseXML.getElementsByTagName("login-timeout").length == 1)
+    {
+        var nTimeout = xmlHttp.responseXML.getElementsByTagName("login-timeout")[0].childNodes[0].nodeValue;
+        top.g_nTimeout = nTimeout;
+    }
+    else
+    {
+        top.g_nTimeout = 10;
+    }
+}
+
+function UpdateCopyRight(sCopyRightYear, sWebUiVersion)
+{
+	function OnCopyRight(sCopyRight)
+	{
+		var nPosFirst = sCopyRight.indexOf("%s");
+		if(-1 != nPosFirst)
+		{
+			var sSubStringTmp = sCopyRight.substring(nPosFirst+2);
+			var nPosSecond = sSubStringTmp.indexOf("%s");
+			if(-1 != nPosSecond)
+			{
+	    		var sSubString = sSubStringTmp.substring(nPosSecond+2);
+	    		sSubString = sSubString.replace(/^[ ]*/,"");  
+	    		sSubString = parseInt(sSubString.substring(0,4));
+	    		if(sSubString == top.g_nCopyRightYear)
+	    		{
+	    			return "";
+	    		}
+	    		else
+	    		{
+	    			return "-"+top.g_nCopyRightYear;
+	    		}
+			}
+		}	
+	}
+    var oScopyright = document.getElementById("copyrightspan");
+    var sCopyRight = oScopyright.innerHTML;
+    var CopyRightYear = OnCopyRight(sCopyRight);
+
+    var sCopyRight = top.sprintf(sCopyRight, sWebUiVersion, String.fromCharCode(169), CopyRightYear);
+    oScopyright.innerHTML = sCopyRight;
+    oScopyright.style.display="";
+}
+function OnSave(oLink)
+{
+    var sAlert = "<xsl:value-of select="/ROOT/STATIC/NO_SAVE"/>".parseUnicode();
+    if(1==MenuWindow.g_nRole) // slog user can't save
+    {
+        alert(sAlert);
+        return;
+    }
+
+    var saveConfirm = "<xsl:value-of select="/ROOT/STATIC/SAVE_CONFIRM"/>";
+    if(!confirm(saveConfirm))return;
+    var oRequest = new XmlRequest(XCMP_ACTION_MODIFY);
+    oRequest.AddModule("system")
+                .AddSubModule("device")
+                    .AddTable("save-table")
+                        .AddField("save",0);
+    var img;
+    saving();
+    Frame.Ajax.send("/wcn/device/set.x",oRequest,function(){
+        saveFinished(this.responseXML);
+    },{bChkErr:false});
+    oLink.blur();
+    function saving()
+    {
+        img = Frame.Util.createElement(window,"img",{src:"/images/loading.gif"},{border:0});
+        if(oLink.firstChild.nodeType == "3")oLink.insertBefore(img,oLink.firstChild);
+    }
+    <![CDATA[
+    function saveFinished(xmlDoc)
+    {
+        var oErrorMsg = xmlDoc.getElementsByTagName("ErrorMsg")[0].firstChild;
+        var finished = oErrorMsg.nodeValue;
+        
+        /*½â¾öFirefoxÖÐÓÐ»Ø³µ»»ÐÐ±ê¼Ç*/
+        if((oErrorMsg.nodeType == 3)&& (xmlDoc.getElementsByTagName("message").length != 0))
+        {
+        	finished = oErrorMsg.nextSibling.nodeValue
+        }
+
+		if(finished == null)
+		{
+        	finished=xmlDoc.getElementsByTagName("message")[0].firstChild.nodeValue;		
+        }
+
+        if(Frame.Util.contains(oLink,img))
+        {
+        	oLink.removeChild(img);
+        }
+        if(finished != null)
+		{     
+        	finished = finished.replace(/.*\n/g,"");
+        	alert(finished);
+        }
+    }
+    ]]>
+}
+
+function OnRaise()
+{
+    var raiseNote = "<xsl:value-of select="/ROOT/STATIC/RAISE_NOTE"/>";
+    var sPswdErr = "<xsl:value-of select="/ROOT/STATIC/PSWD_ERR"/>";
+    
+    Frame.Widget.FWindow.open(Frame.Widget.FWindow.PASSWORD_WINDOW,function(returnedValue)
+        {
+        	if(returnedValue.length > 128)
+        	{
+        		// password too long to send request
+        		alert(sPswdErr);
+        		return;
+        	}
+        	returnedValue = escape(returnedValue);
+            top.doAction(top.FrmSubmit,"url::/wcn/user/SysAdminSub?passwd=" + returnedValue);
+            Frame.updateFrameTimeout();
+        },{info:raiseNote}
+    );
+}
+
+function OnHelp()
+{
+    if ("" == g_sWebHelp)
+    {
+        top.doAction(top.GetCtrlWindow(),'url::/wcn/help/about.x');
+    }
+    else
+    {
+        OpenHelpDoc ();
+    }
+}
+
+function OpenHelpDoc ()
+{
+    var oUrl = window.location;
+    try{
+        g_szHelpPath = "/help/"+g_sWebHelp+"/"+g_LANG+"/";
+
+        if (!(top.GetCtrlWindow().g_sPageHelpID))
+        {
+            //Èç¹ûCtlWindow»¹Ã»ÓÐLoad½áÊø, ÔòÏÈ²»´¦ÀíHelpÇëÇó
+            return;
+        }
+        /* »ñµÃ°ïÖúÒ³ÃæµÄÎÄ¼þÃû, ×éÖ¯URL */
+        var szHelpDoc = Help_GetHelpDocUrlByHelpID (top.GetCtrlWindow().g_sPageHelpID);
+        var szHelpUrl = g_szHelpPath + szHelpDoc;
+        /* ´ò¿ªÐÂµÄ´°¿Ú */
+        g_oNewWin = window.open (szHelpUrl, "WebHelpDocument","location=no,toolbar=no,titlebar=no,status=no,scrollbars=yes,menubar=no, resizable=yes, width=800px, height=600px");
+        /* ¸ßÁÁ°ïÖúÒ³Ãæ´°¿Ú */
+        g_oNewWin.focus();
+    }catch (e){}
+}
+function OnAjaxRequestForLogCB()
+{
+    return;
+}
+
+window.onunload = function (){};
+    </script>
+    </head>
+    <body onload="OnInitialize()" id="frame_body" ondragstart="return false;">
+        <div id="BODY" style="height:100%" >
+            <xsl:apply-templates select="ROOT/DYNA" />
+        </div>
+        <div id="FOOTER">
+            <form id="tab_form">
+                <input type="hidden" name="uid" value="{ROOT/STATIC/UID}"/>
+                <input type="hidden" name="info" value=""/>
+                <input type="hidden" name="xml" value=""/>
+            </form>
+        </div>
+    </body>
+</html>
+</xsl:template>
+<xsl:template match="DYNA">
+	<form id="form_logout" action="/wcn/logout" method="get">
+		<input type="hidden" name="uid" value="{/ROOT/STATIC/UID}"/>
+	</form>
+        <table cellspacing="0" cellpadding="0" width="100%" border="0" height="100%">
+            <!-- logo -->
+            <tr>
+                <td id="headarea">
+                    <a>
+                        <xsl:if test="//LogoHref and string-length(//LogoHref)>0">
+                            <xsl:attribute name="href"><xsl:value-of select="//LogoHref"/></xsl:attribute>
+                        </xsl:if>
+                        <IMG src="../../customdir/images/logo.gif" alt="{//LogoAlt}" border="0" style="position:absolute;top:0px;left:0px;"/>
+                    </a>
+                    <div id="BANNER">
+                        <xsl:variable name="dev-name">
+                            <xsl:value-of select="/ROOT/DYNA/Banner"/>
+                        </xsl:variable>
+                        <nobr>
+                        <xsl:choose>
+                            <xsl:when test="$dev-name != ''">
+                                <xsl:value-of select="$dev-name"/>
+                            </xsl:when>
+                            <xsl:otherwise>Web Management Platform</xsl:otherwise>
+                        </xsl:choose></nobr>
+                      </div>
+        <iframe id="FrmSubmit" name="FrmSubmit" style="width:100%;height:0px;" frameborder="0"  src="/wcn/F568B45880F283B7D6A0C2A8430B85/html/empty.html"></iframe>
+                </td>
+            </tr>
+            <!-- status bar -->
+            <tr>
+                <td>
+                    <table width="100%" cellspacing="0" cellpadding="0" >
+                        <tr>
+                            <td id="MenuPath"/>
+                            <td align="right" id="infoarea">
+                            <span style="font-size:12px;">
+                            
+                            <xsl:call-template name="OutputButton">
+                                <xsl:with-param name="position" select="1"/>
+                                <xsl:with-param name="node" select="/ROOT/STATIC/link-buttons/button[1]"/>
+                            </xsl:call-template>
+                            </span>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <!-- content -->
+            <tr height="100%">
+                <td align="center" height="100%">
+                    <iframe style="WIDTH: 100%; HEIGHT: 100%" border="0" id="Frame_Content" name="content" frameSpacing="0" src="/wcn/F568B45880F283B7D6A0C2A8430B85/html/content.htm" frameBorder="0" scrolling="auto"/>
+                </td>
+            </tr>
+            <!-- copy right -->
+            <tr>
+                <td id="copyrightarea" border="0">
+                    <span id="copyrightspan" style="display:none;">
+                        <xsl:call-template name="GenerateCopyRightContent"/>
+                    </span>
+                </td>
+            </tr>
+        </table>
+        <input type="hidden" id="user_name" value="{//DYNA/Username}"/>
+        <input type="hidden" id="user_pass" value="{//DYNA/Password}"/>
+    </xsl:template>
+    <xsl:template name="OutputButton">
+        <xsl:param name="position"/>
+        <xsl:param name="node"/>
+        <xsl:if test="$node">
+            <xsl:choose>
+                <xsl:when test="($node/@level and not(contains($node/@level,/ROOT/PRVL/CURRENT_USER)))">
+                    <xsl:call-template name="OutputButton">
+                        <xsl:with-param name="position" select="$position"/>
+                        <xsl:with-param name="node" select="$node/following-sibling::*[1]"/>
+                    </xsl:call-template>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:if test ="/ROOT/PRVL/CURVIRTUALID = 1">
+                        <xsl:if test="$position>1">
+                            <xsl:value-of select="' | '"/>
+                        </xsl:if>
+                        <a class="white" href="javascript:void(0)" onclick="{$node/@action}(this);return false;">
+                            <xsl:value-of select="$node"/>
+                        </a>
+                    </xsl:if>
+                    <xsl:if test ="/ROOT/PRVL/CURVIRTUALID != 1">
+                        <xsl:if test="$position>2">
+                            <xsl:value-of select="' | '"/>
+                        </xsl:if>
+                        <xsl:if test="$position>1">
+                            <a class="white" href="javascript:void(0)" onclick="{$node/@action}(this);return false;">
+                            <xsl:value-of select="$node"/>
+                            </a>
+                        </xsl:if>
+                    </xsl:if>
+                    <xsl:call-template name="OutputButton">
+                        <xsl:with-param name="position" select="$position + 1"/>
+                        <xsl:with-param name="node" select="$node/following-sibling::*[1]"/>
+                    </xsl:call-template>
+                </xsl:otherwise>
+            </xsl:choose>
+        </xsl:if>
+        
+    </xsl:template>
+</xsl:stylesheet>

@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="gb2312"?>
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+    <xsl:include href="/wcn/F568B45880F283B7D6A0C2A8430B85/xlibs/private.xsl"/>
+    <xsl:include href="/wcn/F568B45880F283B7D6A0C2A8430B85/xlibs/mlist2.xsl"/>   
+    <xsl:template name="HTML_HEAD">
+        <script type="text/javascript" language="javascript" src="/wcn/F568B45880F283B7D6A0C2A8430B85/libs/mlist2.js"/>
+        <script type="text/javascript" language="javascript" src="/wcn/F568B45880F283B7D6A0C2A8430B85/libs/ajax.js"/>
+        <script type="text/javascript" language="javascript" src="/wcn/F568B45880F283B7D6A0C2A8430B85/js/object/object-pub.js"/>
+        <script type="text/javascript" language="javascript" src="/wcn/F568B45880F283B7D6A0C2A8430B85/libs/srequest.js"/>
+        <script type="text/javascript" language="javascript" src="/wcn/F568B45880F283B7D6A0C2A8430B85/js/arp/arp.js"/>
+        <script type="text/javascript" language="javascript" src="/wcn/F568B45880F283B7D6A0C2A8430B85/libs/qassign.js"/>
+        <script type="text/javascript" language="javascript" src="/wcn/F568B45880F283B7D6A0C2A8430B85/libs/ajax.js"/>
+        <script type="text/javascript" language="javascript" src="/wcn/F568B45880F283B7D6A0C2A8430B85/js/arp/menu.js"/>
+	    <script type="text/javascript" language="javascript">
+	    var CurDtcEnabledVlanArray = new Array();
+	    var count = 0;   
+		<xsl:for-each select="//arpdtcvlanenable-table/row">
+		<xsl:variable name="staus" select="status"/>		  
+	       <xsl:if test="$staus = '1'">  
+		      CurDtcEnabledVlanArray [count] = new Object();		
+		      CurDtcEnabledVlanArray [count].vlanid = "<xsl:value-of select="vlanid"/>";
+		      count=count+1;
+		  </xsl:if>
+		</xsl:for-each>		
+		
+
+		var CurDtcTrustPortArray = new Array();
+		count =0;
+		<xsl:for-each select="//arpdtctrustif-table/row">
+		  <xsl:variable name="staus" select="status"/>
+		     
+		     <xsl:if test="$staus = '1'">        
+				CurDtcTrustPortArray [count] = new Object();		
+				CurDtcTrustPortArray [count].ifindex = "<xsl:value-of select="ifindex"/>";
+				count=count+1;
+		     </xsl:if>
+		</xsl:for-each>		
+	     
+	            function OnInitialize()
+	            {
+	                strDtcSetVLANING=  "<xsl:value-of select="//STATIC/DtcSetVLANING"/>".parseUnicode();
+   	                strDtcSettrust=  "<xsl:value-of select="//STATIC/DtcSetTrustport"/>".parseUnicode();
+	                strDtcSetuserchk=  "<xsl:value-of select="//STATIC/DtcSetUserValid"/>".parseUnicode();
+	                strDtcSetpktchk=  "<xsl:value-of select="//STATIC/DtcSetPktchk"/>".parseUnicode();
+	                
+	            	sConfirmEnableall= "<xsl:value-of select="//STATIC/confirmenableall"/>".parseUnicode();
+	            	sConfirmDelall= "<xsl:value-of select="//STATIC/confirmdelall"/>".parseUnicode();
+	            	sVlanmax= "<xsl:value-of select="//STATIC/arp_reachmaxvlan"/>".parseUnicode();
+	            }   
+
+	        </script>
+	     <style type="text/css">
+	    <![CDATA[
+	    .Red {
+	        color: #FF0000;
+	    }   
+	    ]]>
+	    </style>
+    </xsl:template>
+
+	<xsl:template match="/ROOT/DYNA">	
+		<xsl:param name="str_res"/>
+		<xsl:param name="menu_struct"/>		
+	 <form id="id_arpdtcset" name="n_arpdtcset" onsubmit="return onARPDtcSubmit(this);" method="post">
+	
+	<!--VLAN配置设置开始 -->
+	<table width="100%" border="0px" cellpadding="0px" cellspacing="0px" class="content_value">
+	<tr>
+	<td  width="47%">
+     <fieldset id="id_setvlan" style="width:100%;padding:10px; margin-left:10px">
+		<legend>
+			<span>
+				<xsl:value-of select="/ROOT/STATIC/vlanfiledsettip"/>
+			</span>
+		</legend>
+		<table width="100%" border="0px" cellpadding="0px" cellspacing="0px" class="content_value">
+		     	<tr>
+        		<td align ="left" width = "40%">
+		             <select id="id_inVlanGroup" name="n_inVlanGroup" multiple="multiple" size="10" style="width:100%;"  width="50">
+		             <option value="0">-----<xsl:value-of select="/ROOT/STATIC/vlanEnabledTip"/>-----</option>
+		             <xsl:for-each select="//DYNA/arp/arpdtc/arpdtcvlanenable-table/row">
+	                       	<xsl:variable name="staus" select="status"/>
+	                   		<xsl:if test="$staus = '1'">
+	                             <option value="{vlanid}">
+		                              <xsl:value-of select="vlanid"/>		                                           
+		                         </option>
+	                         </xsl:if>
+                       </xsl:for-each>
+		            </select>
+	            </td>
+        		<td width = "20%">
+        		<table width="100%" border="0px" cellpadding="0px" cellspacing="0px" class="content_value">
+ 					<tr align ="center">
+        				<td>
+           				    <input name="ValidchkSubmit" id="id_ValidchkSubmit" type="button" class="buttonX" value="&lt;&lt;" onclick="OnARPDtcVlanMoveIn('id_inVlanGroup','id_outVlanGroup')"/>
+
+           		       </td>
+           		    </tr>
+           		    <tr align ="center">
+        				<td>
+           				    <input name="ValidchkSubmit" id="id_ValidchkSubmit" type="button" class="buttonX"  value="&gt;&gt;" onclick="OnARPDtcVlanMoveOut('id_inVlanGroup','id_outVlanGroup')"/>
+           		       </td>
+ 					</tr>
+
+                </table>
+                </td>
+                <td align ="right" width = "40%">
+        			<select id="id_outVlanGroup" name="n_outVlanGroup" multiple="multiple" size="10" style="width:100%;" width="50">
+        			   <option value="0">-----<xsl:value-of select="/ROOT/STATIC/VlanDisabledTip"/>-----</option>
+                       <xsl:for-each select="//DYNA/arp/arpdtc/arpdtcvlanenable-table/row">
+	                       	<xsl:variable name="staus" select="status"/>
+	                   		<xsl:if test="$staus = '0'">
+	                             <option value="{vlanid}">
+		                              <xsl:value-of select="vlanid"/>		                                           
+		                         </option>
+	                         </xsl:if>
+                       </xsl:for-each>			                                     
+         			</select>
+        		</td>  
+  	            
+            </tr>
+		</table>
+
+	</fieldset>
+    <!--VLAN配置设置结束 -->
+    <!--信任端口配置设置开始 -->
+	</td>
+	<td width="6%"/>
+	<td width="47%">
+        <fieldset id="id_settrust" style="width:100%;padding:10px; margin-left:10px">
+				<legend>
+					<span>
+						<xsl:value-of select="/ROOT/STATIC/trustedTip"/>
+					</span>
+				</legend>
+		<table width="100%" border="0px" cellpadding="0px" cellspacing="0px" class="content_item">			
+        	<tr>
+        		<td align ="left" width = "40%">
+                    <select id="id_trustinterface" name="n_trustinterface" multiple="multiple" size="10" >
+                        <option value="0">-----<xsl:value-of select="/ROOT/STATIC/trustedTip"/>-----</option>
+                        <xsl:choose>
+                            <xsl:when test="(//DYNA/SupportWlan = 'true')">
+                                <xsl:for-each select="//DYNA/arp/arpdtc/arpdtctrustif-table/row">
+                                    <xsl:variable name="staus" select="status"/>
+                                    <xsl:variable name="intrefacename" select="ifname"/>
+                                    <xsl:variable name="intrefaceindex" select="ifindex"/>
+        	                       	<xsl:variable name="EssId" select="substring-after($intrefacename,'WLAN-ESS')"/>
+        	                   		<xsl:if test="$staus = '1'">
+                                        <xsl:choose>
+                                            <xsl:when test="(string-length($EssId) != 0)">
+                                                <xsl:variable name="ssidname" select="//DYNA/arp/arpdtc/serv-plcy-table/row[bind-id=$EssId]/ssid-name"/>
+                                                <xsl:variable name="encptmode" select="//DYNA/arp/arpdtc/serv-plcy-table/row[bind-id=$EssId]/encpt-mode"/>
+                                                <xsl:choose>
+                                                    <xsl:when test="(string-length($ssidname) != 0)">
+                                                        <xsl:variable name="encptfullmode" select="/ROOT/STATIC/SSIDENCPTMODE[@value=$encptmode]"/>
+                                                        <xsl:variable name="ssidfullname" select="concat($ssidname, $encptfullmode)"/>
+                                                        <option value="{concat($ssidfullname,'##',$intrefaceindex)}">
+                                                            <xsl:value-of select="$ssidfullname"/>
+                                                        </option>
+                        							</xsl:when>
+                                                </xsl:choose>
+                							</xsl:when>
+                                            <xsl:otherwise>
+                                                <option value="{concat($intrefacename,'##',$intrefaceindex)}">
+                                                    <xsl:value-of select="$intrefacename"/>
+                                                </option>
+                                            </xsl:otherwise>
+                                        </xsl:choose>
+                                    </xsl:if>
+                                </xsl:for-each>
+							</xsl:when>
+                            <xsl:otherwise>
+                   				<xsl:for-each select="//DYNA/arp/arpdtc/arpdtctrustif-table/row">
+        	                       	<xsl:variable name="staus" select="status"/>
+        	                       	<xsl:variable name="intrefacename" select="ifname"/>
+        	                       	<xsl:variable name="intrefaceindex" select="ifindex"/>
+                                    <xsl:if test="$staus = '1'">
+                                        <option value="{concat($intrefacename,'##',$intrefaceindex)}">
+                                            <xsl:value-of select="$intrefacename"/>
+                                        </option>
+                                    </xsl:if>
+                                </xsl:for-each>
+                            </xsl:otherwise>
+                        </xsl:choose>
+                    </select>
+	            </td>
+        		<td  width ="20%">
+        		<table border="0px" cellpadding="0px" cellspacing="0px" class="content_item">
+        		  
+ 					<tr align ="center">
+        				<td>
+           				    <input name="ValidchkSubmit" id="id_ValidchkSubmit" type="button" class="buttonX" value="&lt;&lt;" onclick="OnARPDtctrustMoveIn('id_trustinterface','id_nottrustinterface')"/>
+
+           		       </td>
+           		    </tr>
+           		      <tr align ="center">
+        				<td>
+           				    <input name="ValidchkSubmit" id="id_ValidchkSubmit" type="button" class="buttonX" value="&gt;&gt;" onclick="OnARPDtctrustMoveOut('id_trustinterface','id_nottrustinterface')"/>
+           		       </td>
+ 					</tr>
+                </table>
+                </td>
+
+                <td align ="right" width="%40">
+                    <select id="id_nottrustinterface" name="n_nottrustinterface" multiple="multiple" size="10" >
+                        <option value="0">-----<xsl:value-of select="/ROOT/STATIC/nottrustedTip"/>-----</option>
+                        <xsl:choose>
+                            <xsl:when test="(//DYNA/SupportWlan = 'true')">
+                   				<xsl:for-each select="//DYNA/arp/arpdtc/arpdtctrustif-table/row">
+        	                       	<xsl:variable name="staus" select="status"/>
+        	                       	<xsl:variable name="intrefacename" select="ifname"/>
+        	                       	<xsl:variable name="intrefaceindex" select="ifindex"/>
+        	                       	<xsl:variable name="EssId" select="substring-after($intrefacename,'WLAN-ESS')"/>
+        	                   		<xsl:if test="$staus = '0'">
+                                        <xsl:choose>
+                                            <xsl:when test="(string-length($EssId) != 0)">
+                                                <xsl:variable name="ssidname" select="//DYNA/arp/arpdtc/serv-plcy-table/row[bind-id=$EssId]/ssid-name"/>
+                                                <xsl:variable name="encptmode" select="//DYNA/arp/arpdtc/serv-plcy-table/row[bind-id=$EssId]/encpt-mode"/>
+                                                <xsl:choose>
+                                                    <xsl:when test="(string-length($ssidname) != 0)">
+                                                        <xsl:variable name="encptfullmode" select="/ROOT/STATIC/SSIDENCPTMODE[@value=$encptmode]"/>
+                                                        <xsl:variable name="ssidfullname" select="concat($ssidname, $encptfullmode)"/>
+                                                        <option value="{concat($ssidfullname,'##',$intrefaceindex)}">
+                                                            <xsl:value-of select="$ssidfullname"/>
+                                                        </option>
+                        							</xsl:when>
+                                                </xsl:choose>
+                							</xsl:when>
+                                            <xsl:otherwise>
+                                                <option value="{concat($intrefacename,'##',$intrefaceindex)}">
+                                                    <xsl:value-of select="$intrefacename"/>
+                                                </option>
+                                            </xsl:otherwise>
+                                        </xsl:choose>
+                                    </xsl:if>
+                                </xsl:for-each>
+							</xsl:when>
+                            <xsl:otherwise>
+                   				<xsl:for-each select="//DYNA/arp/arpdtc/arpdtctrustif-table/row">
+        	                       	<xsl:variable name="staus" select="status"/>
+        	                       	<xsl:variable name="intrefacename" select="ifname"/>
+        	                       	<xsl:variable name="intrefaceindex" select="ifindex"/>
+                                    <xsl:if test="$staus = '0'">
+                                        <option value="{concat($intrefacename,'##',$intrefaceindex)}">
+                                            <xsl:value-of select="$intrefacename"/>
+                                        </option>
+                                    </xsl:if>
+                                </xsl:for-each>
+                            </xsl:otherwise>
+                        </xsl:choose>
+                    </select>
+                </td>
+
+            </tr>
+		</table>
+		</fieldset>
+			</td>
+	</tr>	
+	</table>
+	
+    <!--信任端口配置设置结束 --> 
+
+
+	<!--这里开始全局设置 -->
+	<fieldset id="setsystime" style="width:100%;padding:10px; margin-left:10px">
+				<legend>
+					<span>
+						<xsl:value-of select="/ROOT/STATIC/arp_dtcpktchk"/>
+					</span>
+				</legend>
+            <table width="100%" border="0px" cellpadding="0px" cellspacing="0px" class="content_set">
+				<tr>
+ 				
+                    <td width="2%" class="content_item">
+                   		<xsl:choose>       
+					        <xsl:when test="/ROOT/DYNA/arp/arpdtc/arpdtcvalidchk-table/row/srcmac >'0' ">         
+						  		<input type="checkbox"	id="id_arpdtc_chksrcmac" name="n_arpdtc_chksrcmac" checked="true"/>					
+					        </xsl:when>
+					        <xsl:otherwise>
+						   		<input type="checkbox"	id="id_arpdtc_chksrcmac" name="n_arpdtc_chksrcmac" />					
+					        </xsl:otherwise>
+					    </xsl:choose>
+					</td>
+					<td class="content_value" align="left" >
+						<span>
+							<xsl:value-of select="/ROOT/STATIC/arp_dtcvalidchksrcmac"/>						
+						</span>									
+					</td>
+			    </tr>
+			    <tr >
+					<td width="2%" class="content_item">
+					    <xsl:choose>       
+					        <xsl:when test="/ROOT/DYNA/arp/arpdtc/arpdtcvalidchk-table/row/dstmac >'0' ">         
+						  		<input type="checkbox"	id="id_arpdtc_chkdstmac" name="n_arpdtc_chkdstmac" checked="true"/>					
+					        </xsl:when>
+					        <xsl:otherwise>
+						   		<input type="checkbox"	id="id_arpdtc_chkdstmac" name="n_arpdtc_chkdstmac" />					
+					        </xsl:otherwise>
+					    </xsl:choose>
+					</td>
+					<td class="content_value" align="left" >
+						<span>
+							<xsl:value-of select="/ROOT/STATIC/arp_dtcvalidchkdstmac"/>						
+						</span>									
+					</td>
+			    </tr>
+			    <tr >
+					<td width="2%" class="content_item">
+						<xsl:choose>       
+					        <xsl:when test="/ROOT/DYNA/arp/arpdtc/arpdtcvalidchk-table/row/ip >'0' ">         
+						    	<input type="checkbox"	id="id_arpdtc_chkip" name="n_arpdtc_chkip" checked="true"/>					
+					        </xsl:when>
+					        <xsl:otherwise>
+						    	<input type="checkbox"	id="id_arpdtc_chkip" name="n_arpdtc_chkip" />					
+					        </xsl:otherwise>
+					    </xsl:choose>
+					</td>
+					<td class="content_value" align="left" >
+						<span>
+							<xsl:value-of select="/ROOT/STATIC/arp_dtcvalidchkip"/>						
+						</span>									
+					</td>
+			    </tr>
+		    </table>
+       </fieldset>
+       
+		<!--全局设置结束 -->
+		<table width="100%" border="0px" cellpadding="0px" cellspacing="0px" class="content_set">           
+            <tr class="row246">
+                <td colspan="2" align="center" class="content_operation_area">
+                    <span>
+                    	<xsl:if test="contains('3',/ROOT/PRVL/CURRENT_USER)">  
+                        <input name="n_trustSubmit" id="id_trustSubmit" type="submit" class="buttonX" value="{$str_res/BUTTONS/APPLY}"/>
+                        </xsl:if>
+                    </span>
+                </td>
+            </tr>
+		</table>
+	</form>
+
+    </xsl:template> 
+</xsl:stylesheet>
